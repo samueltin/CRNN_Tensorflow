@@ -162,7 +162,7 @@ class TextDataProvider(object):
         assert ops.exists(test_anno_path)
 
         with open(test_anno_path, 'r') as anno_file:
-            info = np.array([tmp.strip().split() for tmp in anno_file.readlines()])
+            info = np.array([tmp.strip().split('\t') for tmp in anno_file.readlines()])
 
             test_labels = np.array([tmp for tmp in info[:, 1]])
 
@@ -177,7 +177,7 @@ class TextDataProvider(object):
         assert ops.exists(train_anno_path)
 
         with open(train_anno_path, 'r') as anno_file:
-            info = np.array([tmp.strip().split() for tmp in anno_file.readlines()])
+            info = np.array([tmp.strip().split('\t') for tmp in anno_file.readlines()])
 
             train_labels = np.array([tmp for tmp in info[:, 1]])
 
